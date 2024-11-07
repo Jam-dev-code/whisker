@@ -34,7 +34,8 @@
         $('.btn-play').click(function () {
             $videoSrc = $(this).data("src");
         });
-        console.log($videoSrc);
+        var $videoSrc = "https://www.youtube.com/watch?v=lGk4qd4VcTs"; // Make sure this is set properly
+        console.log($videoSrc);        
 
         $('#videoModal').on('shown.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");

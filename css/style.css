@@ -1,9 +1,8 @@
-/********** Template CSS **********/
 :root {
-    --primary: #7AB730;
+    --primary: #008866;
     --secondary: #FFD33C;
     --light: #F3F3F3;
-    --dark: #212121;
+    --dark: #000000;
 }
 
 [class^=flaticon-]:before,
@@ -113,7 +112,7 @@
 }
 
 .hero-header {
-    background: url(../img/hero.jpg) top right no-repeat;
+    background: url(../img/hero2.jpg) top right no-repeat;
     background-size: cover;
 }
 
@@ -456,3 +455,13 @@
 .blog-item a:hover i::after {
     width: 50px;
 }
+
+.text-dark {
+text-shadow: 0 0 5px rgba(88, 207, 124, 0.758), 0 0 10px rgba(12, 65, 40, 0.3), 0 0 15px rgba(12, 65, 40, 0.2);
+}
+
+.text-dark1 {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(198, 216, 0, 0.736), 0 0 10px rgba(192, 173, 29, 0.741), 0 0 15px rgba(255, 200, 3, 0.884);
+}
+
