@@ -27,16 +27,53 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/css/fontawesome.css" rel="stylesheet">
     <link href="css/css/solid.css" rel="stylesheet">
-    
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0 mb-5">
+        <a href="index.html" class="navbar-brand ms-lg-5">
+            <h1 class="m-0 text-uppercase text-dark">
+                <img src="img/logo2.png" alt="Aid for Paws Logo" class="me-3" style="width: 60px; height: 60px;">
+                Aid for Paws
+            </h1>    
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Services | Volunteer</a>
+                <a href="adopt.html" class="nav-item nav-link">
+                    <i class="fas fa-paw me-2"></i> Adopt
+                </a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="organizations.html" class="dropdown-item">ANIMAL WELFARE ORGANIZATIONS</a>
+                        <a href="blog.html" class="dropdown-item">Blogs</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">
+                    <i class="fa-solid fa-phone me-2" style="color: #ffffff;"></i></i> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+</body>
+
     <style>
-        body {
+        /* body {
             font-family: Arial, sans-serif;
             background-color: #fdf1e5;
             color: #333;
             text-align: center;
             margin: 0;
             padding: 20px;
-        }
+        } */
         h1 {
             color: #333;
         }
@@ -80,8 +117,8 @@
             color: #fff;
         }
         .faq-btn {
-            background-color: #fff;
-            color: #333;
+            background-color: #333;
+            color: #ffffff;
             border: 1px solid #333;
         }
         .animal-gallery {
@@ -143,15 +180,14 @@
         gap: 10px;
         justify-content: center;
         margin-top: 20px;
-}
-.apply-btn:hover {
-    background-color: #008033;
-}
+        }
+        .apply-btn:hover {
+        background-color: #008033;
+        }
 
-.faq-btn:hover {
-    background-color: #008033;
-}
-
+        .faq-btn:hover {
+        background-color: #008033;
+        }
     </style>
 
     <script>
@@ -170,9 +206,7 @@
             filterPets('all'); // Display all pets by default
         });
     </script>
-</head>
 
-<body>
     <div class="container">
         <h1>Adopt a Shelter Cat or Dog</h1>
         <div class="instructions">
@@ -197,7 +231,6 @@
             <button data-type="cat" onclick="filterPets('cat')">Cats</button>
             <button data-type="dog" onclick="filterPets('dog')">Dogs</button>
         </div>
-        
         <div class="gallery" id="pet-gallery">
             <!--For All Cats-->
                 <div class="pet-item cat">
@@ -524,16 +557,35 @@
                 </div>
             </div>
         </div>
-        <div class="adoption-story">
-            <img src="img/blog-1.jpg" alt="Arthur with his family" class="story-image">
-            <div class="story-text">
-                <h3>Former shelter dog <span class="highlight">ARTHUR</span></h3>
-                <p>is now living the life in Canada with his furparents Terrie and Mike, and his little sister Pia. All it took was love and companionship to transform this shy, cautious guy to a loyal and loving king of the household.</p>
-                <p>You, too, can open your home to a shelter animal and change their life.</p>
-                <button onclick="applyNow()">Apply Now</button>
+        <div class="adoption-stories-container d-flex">
+            <!-- Dog Adoption Story -->
+            <div class="adoption-story me-3">
+                <img src="img/blog-1.jpg" alt="Arthur with his family" class="story-image">
+                <div class="story-text">
+                    <h3>Former shelter dog <span class="highlight">ARTHUR</span></h3>
+                    <p>is now living the life in Canada with his furparents Terrie and Mike, and his little sister Pia. All it took was love and companionship to transform this shy, cautious guy into a loyal and loving king of the household.</p>
+                    <p>You, too, can open your home to a shelter animal and change their life.</p>
+                    <button onclick="window.location.href='adoptForm.html'">Apply Now</button>
+                </div>
+            </div>
+        
+            <!-- Cat Adoption Story -->
+            <div class="adoption-story">
+                <img src="img/blog-2.jpg" alt="Luna with her new family" class="story-image">
+                <div class="story-text">
+                    <h3>Former shelter cat <span class="highlight">LUNA</span></h3>
+                    <p>found her forever home with Anne and Chris. From a timid, quiet kitty, she has blossomed into a playful and curious member of the family. Luna is now living her best life surrounded by love.</p>
+                    <p>Consider adopting a shelter cat and make a difference in their life.</p>
+                    <button onclick="window.location.href='adoptForm.html'">Apply Now</button>
+                </div>
             </div>
         </div>
         
+        <script>
+            function applyNow() {
+                alert("Thank you for your interest! Please fill out the adoption form.");
+            }
+        </script>
         <style>
         .adoption-story {
             display: flex;
@@ -568,11 +620,35 @@
             border-radius: 5px;
         }
         </style>
-        
-        <script>
-            function applyNow() {
-                alert("Thank you for your interest! Please fill out the adoption form.");
-            }
-        </script>
-        </body>
+
+    <div class="container-fluid bg-dark text-white-50 py-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0">&copy; <a class="text-white" href="#">Aid for Paws</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed by <a class="text-white">Careful Whiskers Team</a></p>      
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
 </html>

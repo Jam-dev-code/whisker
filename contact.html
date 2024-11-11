@@ -67,87 +67,62 @@
     </nav>
     <!-- Navbar End -->
 
-
-    <!-- Contact Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-                <h6 class="text-primary text-uppercase">Contact Us</h6>
-                <h1 class="display-5 text-uppercase mb-0">Please Feel Free To Contact Us</h1>
+<!-- Contact Start -->
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+            <h6 class="text-primary text-uppercase">Contact Us</h6>
+            <h1 class="display-5 text-uppercase mb-0">Please Feel Free To Contact Us</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <form action="insert.php" method="post">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <input type="text" name="name" class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px;" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="email" name="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" name="contactNumber" class="form-control bg-light border-0 px-4" placeholder="Contact Number (optional)" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" name="subject" class="form-control bg-light border-0 px-4" placeholder="Subject" style="height: 55px;" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" class="form-control bg-light border-0 px-4 py-3" rows="8" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <form action="insert.php" method="post">
-                        <div class="row g-3">
-                            <div class="col-12">
-                                <input type="text" name="name" class="form-control bg-light border-0 px-4" placeholder="Your Name" style="height: 55px;" required>
-                            </div>
-                            <div class="col-12">
-                                <input type="email" name="email" class="form-control bg-light border-0 px-4" placeholder="Your Email" style="height: 55px;" required>
-                            </div>
-                            <div class="col-12">
-                                <input type="text" name="contactNumber" class="form-control bg-light border-0 px-4" placeholder="Contact Number (optional)" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" name="subject" class="form-control bg-light border-0 px-4" placeholder="Subject" style="height: 55px;" required>
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" class="form-control bg-light border-0 px-4 py-3" rows="8" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                            </div>
-                            
-                    </form>
-                </div>
-                <div class="col-lg-5">
-                    <!-- <div class="bg-light mb-5 p-5">
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
-                            <div class="text-start">
-                                <h6 class="text-uppercase mb-1">Country</h6>
-                                <span>Philippines</span>
-                            </div>
-                        </div> -->
-                        <div class="d-flex align-items-center mb-2">
-                            <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
-                            <div class="text-start">
-                                <h6 class="text-uppercase mb-1">Available Rescue Shelters | Vet Service</h6>
-                                <span>Philippines</span>
-                            </div>
-                        </div>
-                        <!-- <div class="d-flex align-items-center mb-2">
-                            <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
-                            <div class="text-start">
-                                <h6 class="text-uppercase mb-1">Email Us</h6>
-                                <span>carefulwhiskers.com</span>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
-                            <div class="text-start">
-                                <h6 class="text-uppercase mb-1">Call Us</h6>
-                                <span>(+63) 93010991865</span>
-                            </div>
-                        </div> -->
-                        <div>
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498343.7801490804!2d121.0489712824587!3d12.879721134998025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3387cfc18b61b6ab%3A0xf8e0f987d5c1e5c4!2sPhilippines!5e0!3m2!1sen!2sph!4v1705727573891!5m2!1sen!2sph"
-                                width="400" 
-                                height="300" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>                        
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1">Available Rescue Shelters | Vet Service</h6>
+                        <span>Philippines</span>
                     </div>
                 </div>
+                <div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498343.7801490804!2d121.0489712824587!3d12.879721134998025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3387cfc18b61b6ab%3A0xf8e0f987d5c1e5c4!2sPhilippines!5e0!3m2!1sen!2sph!4v1705727573891!5m2!1sen!2sph"
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>                        
             </div>
         </div>
     </div>
-    <!-- Contact End -->
-
+</div>
+<!-- Contact End -->
 
   <!-- Footer Start -->
   <div class="container-fluid bg-light mt-5 py-5">
