@@ -1,145 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt a Pet Application Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
+    <meta charset="utf-8">
+    <title>Aid for Paws | Rescue, Rehome, Rejoice: Careful Whiskers</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
+    <!-- Favicon -->
+    <link href="img/logo.png" rel="icon">
 
-        h2 {
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/css/fontawesome.css" rel="stylesheet">
+    <link href="css/css/solid.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="index.html" class="navbar-brand ms-lg-5">
+            <h1 class="m-0 text-uppercase text-dark">
+                <img src="img/logo2.png" alt="Aid for Paws Logo" class="me-3" style="width: 60px; height: 60px;">
+                Aid for Paws
+            </h1>            
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Services | Volunteer</a>
+                <a href="adopt.html" class="nav-item nav-link active">
+                    <i class="fas fa-paw me-2"></i> Adopt
+                </a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                    
+                        <a href="organizations.html" class="dropdown-item">Animal Welfare Organizations</a>
+                        <a href="blog.html" class="dropdown-item">Blogs</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">
+                    <i class="fa-solid fa-phone me-2" style="color: #ffffff;"></i></i> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- <style>
+        h1, h2 {
+            color: #333;
             text-align: center;
-            color: green;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
         }
 
         label {
             font-weight: bold;
-            display: block;
-            margin: 10px 0 5px;
+            margin-top: 10px;
         }
 
-        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
-            width: 100%;
+        input, select, textarea {
             padding: 10px;
-            margin: 8px 0;
+            margin-bottom: 15px;
             border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        input[type="file"] {
+            padding: 3px;
         }
 
         button {
-            background-color: green;
+            padding: 12px;
+            background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
-            width: 100%;
             font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
         }
 
         button:hover {
-            background-color: darkgreen;
+            background-color: #45a049;
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        .alert {
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
         }
 
-        .form-group textarea {
-            resize: vertical;
-            height: 100px;
+        .alert-danger {
+            background-color: #f44336;
         }
 
-        .form-group input[type="radio"] {
-            width: auto;
-            display: inline-block;
+        .alert-success {
+            background-color: #4CAF50;
         }
-    </style>
+    </style> -->
 </head>
 <body>
-
-    <div class="container">
-        <h2>Adopt a Pet Application Form</h2>
-        <form action="#" method="post">
-            <!-- Personal Information Section -->
-            <div class="form-group">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" required>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Adoption Application</h1>
+        <form action="adoptForm.php" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="first_name" class="form-label">First Name*</label>
+                    <input type="text" name="first_name" id="first_name" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="last_name" class="form-label">Last Name*</label>
+                    <input type="text" name="last_name" id="last_name" class="form-control" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="address" class="form-label">Address*</label>
+                    <input type="text" name="address" id="address" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone*</label>
+                    <input type="text" name="phone" id="phone" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email*</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="birth_date" class="form-label">Birth Date*</label>
+                    <input type="date" name="birth_date" id="birth_date" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="occupation" class="form-label">Occupation</label>
+                    <input type="text" name="occupation" id="occupation" class="form-control">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="company_name" class="form-label">Company/Business Name*</label>
+                    <input type="text" name="company_name" id="company_name" class="form-control" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="social_media_profile" class="form-label">Social Media Profile</label>
+                    <input type="text" name="social_media_profile" id="social_media_profile" class="form-control" placeholder="Enter FB/Twitter/IG Link">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="status" class="form-label">Status*</label>
+                    <select name="status" id="status" class="form-select" required>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="pronouns" class="form-label">Pronouns*</label>
+                    <select name="pronouns" id="pronouns" class="form-select" required>
+                        <option value="She/her">She/her</option>
+                        <option value="He/him">He/him</option>
+                        <option value="They/them">They/them</option>
+                    </select>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="adopt_reason" class="form-label">Why do you want to adopt a pet?*</label>
+                    <textarea name="adopt_reason" id="adopt_reason" class="form-control" required></textarea>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="adopted_before" class="form-label">Have you ever adopted a pet before?*</label>
+                    <select name="adopted_before" id="adopted_before" class="form-select" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
+            <h3 class="my-4">Household & Pet Information</h3>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="pet_type" class="form-label">What kind of pet are you interested in adopting?*</label>
+                    <select name="pet_type" id="pet_type" class="form-select" required>
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Both">Both</option>
+                    </select>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="specific_animal" class="form-label">Specific animal you're interested in (if any):</label>
+                    <input type="text" name="specific_animal" id="specific_animal" class="form-control">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="ideal_pet" class="form-label">Ideal pet traits:</label>
+                    <textarea name="ideal_pet" id="ideal_pet" class="form-control"></textarea>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <h3 class="my-4">File Uploads</h3>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="photo_home" class="form-label">Upload a photo of your home:</label>
+                    <input type="file" name="photo_home" id="photo_home" class="form-control" accept="image/*" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="valid_id" class="form-label">Upload a valid ID:</label>
+                    <input type="file" name="valid_id" id="valid_id" class="form-control" accept="image/*" required>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
+            <h3 class="my-4">Interview & Visitation</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="preferred_date" class="form-label">Preferred date for Zoom interview*</label>
+                    <input type="date" name="preferred_date" id="preferred_date" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="preferred_time" class="form-label">Preferred time for Zoom interview</label>
+                    <input type="time" name="preferred_time" id="preferred_time" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="visit_shelter" class="form-label">Will you be able to visit the shelter for the meet-and-greet?*</label>
+                    <select name="visit_shelter" id="visit_shelter" class="form-select" required>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" name="dob" required>
-            </div>
-
-            <!-- Pet Preferences Section -->
-            <div class="form-group">
-                <label for="petType">What type of pet are you interested in adopting?</label>
-                <select id="petType" name="petType" required>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="both">Both</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Do you have a preference for age?</label>
-                <input type="radio" id="puppy" name="agePreference" value="puppy">
-                <label for="puppy">Puppy/Kitten</label>
-                <input type="radio" id="adult" name="agePreference" value="adult">
-                <label for="adult">Adult</label>
-                <input type="radio" id="senior" name="agePreference" value="senior">
-                <label for="senior">Senior</label>
-            </div>
-
-            <div class="form-group">
-                <label for="experience">Have you had pets before? If yes, please describe your experience:</label>
-                <textarea id="experience" name="experience" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="livingConditions">Please describe your living situation (house, apartment, etc.) and any other pets you have:</label>
-                <textarea id="livingConditions" name="livingConditions" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="reason">Why do you want to adopt a pet?</label>
-                <textarea id="reason" name="reason" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <button type="submit">Submit Application</button>
-            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit Application</button>
         </form>
     </div>
+
+  <!-- Footer Start -->
+  <div class="container-fluid bg-light mt-5 py-5">
+    <div class="container pt-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Get In Touch</h5>
+                <p class="mb-4">We provide a chance to street animals to find their lovely shelter</p>
+                <p class="mb-2"><i class="fa-solid fa-location-dot text-primary me-2"></i>Metro Manila, Philippines</p>
+                <p class="mb-2"><i class="fa-solid fa-envelope text-primary me-2"></i>carefulwhiskers.com</p>
+                <p class="mb-0"><i class="fa-solid fa-phone text-primary me-2"></i>(+63) 9301099185</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-body mb-2" href="index.html"><i class="fa-solid fa-arrow-right text-primary me-2"></i>Home</a>
+                    <a class="text-body mb-2" href="about.html"><i class="fa-solid fa-arrow-right text-primary me-2"></i>About Us</a>
+                    <a class="text-body mb-2" href="service.html"><i class="fa-solid fa-arrow-right text-primary me-2"></i>Our Services</a>
+                    <a class="text-body mb-2" href="organizations.html"><i class="fa-solid fa-arrow-right text-primary me-2"></i>Animal Welfare Organizations</a>
+                    <a class="text-body mb-2" href="blog.html"><i class="fa-solid fa-arrow-right text-primary me-2"></i>Blog</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h6 class="text-uppercase mt-4 mb-3">
+                    <i class="fa-solid fa-heart"></i></i> Follow Us
+                </h6>
+                <div class="d-flex">
+                    <a class="btn btn-outline-primary btn-square me-2" href="https://twitter.com/?lang=en-in"><i class="bi bi-twitter"></i></a>
+                    <a class="btn btn-outline-primary btn-square me-2" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                    <a class="btn btn-outline-primary btn-square" href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-12 text-center text-body">
+                <a class="text-body" href="">Terms & Conditions</a>
+                <span class="mx-1">|</span>
+                <a class="text-body" href="contact.html">Support</a>
+
+                <span class="mx-1">|</span>
+                <a class="text-body" href="contact.html">Help</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark text-white-50 py-4">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-md-0">&copy; <a class="text-white" href="#">Aid for Paws</a>. All Rights Reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">Designed by <a class="text-white">Careful Whiskers Team</a></p>    
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
