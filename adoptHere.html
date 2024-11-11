@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Aid for Paws | Rescue, Rehome, Rejoice: Careful Whiskers</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/logo.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/css/fontawesome.css" rel="stylesheet">
+    <link href="css/css/solid.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf1e5;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .instructions {
+            margin: 20px 0;
+        }
+        .instructions p {
+            font-size: 1.1em;
+        }
+        .instructions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .instructions ul li {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .instructions ul li i {
+            color: #333;
+            margin-right: 10px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+        }
+        .apply-btn {
+            background-color: #333;
+            color: #fff;
+        }
+        .faq-btn {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #333;
+        }
+        .animal-gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .animal {
+            text-align: center;
+        }
+        .animal img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .animal-name {
+            font-weight: bold;
+            color: green;
+            margin-top: 5px;
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .filter-buttons button {
+            padding: 5px 10px;
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+        }
+        .filter-buttons .active {
+            background-color: #333;
+            color: #fff;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .pet-item {
+            text-align: center;
+            display: none; /* Hide all items */
+        }
+        .pet-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .gallery {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 columns */
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+}
+.apply-btn:hover {
+    background-color: #008033;
+}
+
+.faq-btn:hover {
+    background-color: #008033;
+}
+
+    </style>
+
+    <script>
+        function filterPets(type) {
+            const items = document.querySelectorAll('.pet-item');
+            items.forEach(item => {
+                item.style.display = (type === 'all' || item.classList.contains(type)) ? 'block' : 'none';
+            });
+            document.querySelectorAll('.filter-buttons button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.filter-buttons button[data-type="${type}"]`).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            filterPets('all'); // Display all pets by default
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Adopt a Shelter Cat or Dog</h1>
+        <div class="instructions">
+            <p>Our adoptable cats and dogs are all spayed/neutered (<em>kapon</em>) and vaccinated. Because they lived a difficult life before being rescued, we need to be sure that they get adopted by loving humans and won’t be subjected to further cruelty or neglect. Here’s how to apply:</p>
+            <ul>
+                <li><i class="fas fa-file-alt"></i>Submit the adoption application form</li>
+                <li><i class="fas fa-video"></i>Attend the Zoom interview</li>
+                <li><i class="fas fa-paw"></i>Meet our shelter animals in person</li>
+                <li><i class="fas fa-heart"></i>Visit your chosen pet to confirm your choice</li>
+                <li><i class="fas fa-calendar-alt"></i>Wait for vet clearance and schedule pick up</li>
+                <li><i class="fas fa-home"></i>Take your pet home!</li>
+            </ul>
+        </div>
+        
+        <div class="buttons">
+            <button class="apply-btn">Apply Now</button>
+            <button class="faq-btn">Adoption FAQ</button>
+        </div>
+        
+        <div class="filter-buttons">
+            <button data-type="all" onclick="filterPets('all')" class="active">All</button>
+            <button data-type="cat" onclick="filterPets('cat')">Cats</button>
+            <button data-type="dog" onclick="filterPets('dog')">Dogs</button>
+        </div>
+        
+        <div class="gallery" id="pet-gallery">
+            <!--For All Cats-->
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Mingming">
+                    <p class="animal-name">MINGMING</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Mimi">
+                    <p class="animal-name">MIMI</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Buboy">
+                    <p class="animal-name">BUBOY</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Puti">
+                    <p class="animal-name">PUTI</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Siopao">
+                    <p class="animal-name">SIOPAO</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Lingling">
+                    <p class="animal-name">LINGLING</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Chuchay">
+                    <p class="animal-name">CHUCHAY</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Bolang">
+                    <p class="animal-name">BOLANG</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Diding">
+                    <p class="animal-name">DIDING</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Chico">
+                    <p class="animal-name">CHICO</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Muning">
+                    <p class="animal-name">MUNING</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Maxi">
+                    <p class="animal-name">MAXI</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Tikoy">
+                    <p class="animal-name">TIKOY</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Gigi">
+                    <p class="animal-name">GIGI</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Baste">
+                    <p class="animal-name">BASTE</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Kulot">
+                    <p class="animal-name">KULOT</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Popoy">
+                    <p class="animal-name">POPOY</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Tiny">
+                    <p class="animal-name">TINY</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Luna">
+                    <p class="animal-name">LUNA</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Bella">
+                    <p class="animal-name">BELLA</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Tisay">
+                    <p class="animal-name">TISAY</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Coco">
+                    <p class="animal-name">COCO</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Bunso">
+                    <p class="animal-name">BUNSO</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Makisig">
+                    <p class="animal-name">MAKISIG</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Nene">
+                    <p class="animal-name">NENE</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Pipoy">
+                    <p class="animal-name">PIPOY</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Balot">
+                    <p class="animal-name">BALOT</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Kiko">
+                    <p class="animal-name">KIKO</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Luningning">
+                    <p class="animal-name">LUNINGNING</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Bong">
+                    <p class="animal-name">BONG</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Taba">
+                    <p class="animal-name">TABA</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Puting">
+                    <p class="animal-name">PUTING</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Sisi">
+                    <p class="animal-name">SISI</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Amboy">
+                    <p class="animal-name">AMBOY</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Nini">
+                    <p class="animal-name">NINI</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Goring">
+                    <p class="animal-name">GORING</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Toto">
+                    <p class="animal-name">TOTO</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Koko">
+                    <p class="animal-name">KOKO</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Neneng">
+                    <p class="animal-name">NENENG</p>
+                </div>
+                <div class="pet-item cat">
+                    <img src="img/cat.jpg" alt="Dong">
+                    <p class="animal-name">DONG</p>
+                </div>
+            
+            <!--For All Dogs-->
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Bantay">
+                    <p class="animal-name">BANTAY</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Tagpi">
+                    <p class="animal-name">TAGPI</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Bagwis">
+                    <p class="animal-name">BAGWIS</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Kulit">
+                    <p class="animal-name">KULIT</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Brownie">
+                    <p class="animal-name">BROWNIE</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Putol">
+                    <p class="animal-name">PUTOL</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Simba">
+                    <p class="animal-name">SIMBA</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Chico">
+                    <p class="animal-name">CHICO</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Max">
+                    <p class="animal-name">MAX</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Totoy">
+                    <p class="animal-name">TOTOY</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Dino">
+                    <p class="animal-name">DINO</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Chuchay">
+                    <p class="animal-name">CHUCHAY</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Bruno">
+                    <p class="animal-name">BRUNO</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Bato">
+                    <p class="animal-name">BATO</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Rambo">
+                    <p class="animal-name">RAMBO</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Chika">
+                    <p class="animal-name">CHIKA</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Mochi">
+                    <p class="animal-name">MOCHI</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Kulot">
+                    <p class="animal-name">KULOT</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Tisoy">
+                    <p class="animal-name">TISOY</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Basha">
+                    <p class="animal-name">BASHA</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Kimchi">
+                    <p class="animal-name">KIMCHI</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Pepe">
+                    <p class="animal-name">PEPE</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Gala">
+                    <p class="animal-name">GALA</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Toto">
+                    <p class="animal-name">TOTO</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Sarge">
+                    <p class="animal-name">SARGE</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Pogi">
+                    <p class="animal-name">POGI</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Palos">
+                    <p class="animal-name">PALOS</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Chubbs">
+                    <p class="animal-name">CHUBBS</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Spike">
+                    <p class="animal-name">SPIKE</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Blackie">
+                    <p class="animal-name">BLACKIE</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Bong">
+                    <p class="animal-name">BONG</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Snowy">
+                    <p class="animal-name">SNOWY</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Maki">
+                    <p class="animal-name">MAKI</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Boots">
+                    <p class="animal-name">BOOTS</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Blue">
+                    <p class="animal-name">BLUE</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Lucky">
+                    <p class="animal-name">LUCKY</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Thunder">
+                    <p class="animal-name">THUNDER</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Ghost">
+                    <p class="animal-name">GHOST</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Daisy">
+                    <p class="animal-name">DAISY</p>
+                </div>
+                <div class="pet-item dog">
+                    <img src="img/dog.jpg" alt="Rex">
+                    <p class="animal-name">REX</p>
+                </div>
+            </div>
+        </div>
+        <div class="adoption-story">
+            <img src="img/blog-1.jpg" alt="Arthur with his family" class="story-image">
+            <div class="story-text">
+                <h3>Former shelter dog <span class="highlight">ARTHUR</span></h3>
+                <p>is now living the life in Canada with his furparents Terrie and Mike, and his little sister Pia. All it took was love and companionship to transform this shy, cautious guy to a loyal and loving king of the household.</p>
+                <p>You, too, can open your home to a shelter animal and change their life.</p>
+                <button onclick="applyNow()">Apply Now</button>
+            </div>
+        </div>
+        
+        <style>
+        .adoption-story {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+        
+        .story-image {
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+        
+        .story-text {
+            max-width: 500px;
+        }
+        
+        .highlight {
+            color: green;
+            font-weight: bold;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        </style>
+        
+        <script>
+            function applyNow() {
+                alert("Thank you for your interest! Please fill out the adoption form.");
+            }
+        </script>
+        </body>
+</html>

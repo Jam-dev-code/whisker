@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: green;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-group input[type="radio"] {
+            width: auto;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Adopt a Pet Application Form</h2>
+        <form action="#" method="post">
+            <!-- Personal Information Section -->
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <!-- Pet Preferences Section -->
+            <div class="form-group">
+                <label for="petType">What type of pet are you interested in adopting?</label>
+                <select id="petType" name="petType" required>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="both">Both</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Do you have a preference for age?</label>
+                <input type="radio" id="puppy" name="agePreference" value="puppy">
+                <label for="puppy">Puppy/Kitten</label>
+                <input type="radio" id="adult" name="agePreference" value="adult">
+                <label for="adult">Adult</label>
+                <input type="radio" id="senior" name="agePreference" value="senior">
+                <label for="senior">Senior</label>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Have you had pets before? If yes, please describe your experience:</label>
+                <textarea id="experience" name="experience" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="livingConditions">Please describe your living situation (house, apartment, etc.) and any other pets you have:</label>
+                <textarea id="livingConditions" name="livingConditions" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Why do you want to adopt a pet?</label>
+                <textarea id="reason" name="reason" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit Application</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
