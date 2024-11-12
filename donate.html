@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate to Aid for Paws</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Donate to Aid for Paws</h2>
+    <form action="donate.php" method="POST" class="mt-4">
+      <div class="mb-3">
+        <label for="donorName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="donorName" name="donorName" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label">Donation Amount</label>
+        <input type="number" class="form-control" id="amount" name="amount" required min="1">
+      </div>
+      <div class="mb-3">
+        <label for="paymentMethod" class="form-label">Payment Method</label>
+        <select class="form-select" id="paymentMethod" name="paymentMethod" required>
+          <option value="gcash">GCash</option>
+          <option value="paypal">PayPal</option>
+          <option value="e-wallet">E-Wallet</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="donationPurpose" class="form-label">Donation Purpose</label>
+        <select class="form-select" id="donationPurpose" name="donationPurpose">
+          <option value="animal_shelter">Animal Shelter</option>
+          <option value="medical_funds">Medical Funds</option>
+          <option value="food_supplies">Food Supplies</option>
+          <option value="general">General Support</option>
+        </select>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="anonymous" name="anonymous" value="1">
+        <label class="form-check-label" for="anonymous">Donate Anonymously</label>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Leave a Message</label>
+        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+      </div>
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="subscribe" name="subscribe" value="1">
+        <label class="form-check-label" for="subscribe">Make this a Monthly Donation</label>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Donate Now</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

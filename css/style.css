@@ -462,6 +462,11 @@ text-shadow: 0 0 5px rgba(88, 207, 124, 0.758), 0 0 10px rgba(12, 65, 40, 0.3), 
 
 .text-dark1 {
     color: #ffffff;
-    text-shadow: 0 0 5px rgba(198, 216, 0, 0.736), 0 0 10px rgba(192, 173, 29, 0.741), 0 0 15px rgba(255, 200, 3, 0.884);
+    text-shadow: 
+        0 0 5px rgb(255, 196, 0), 
+        0 0 10px rgb(15, 68, 27), 
+        0 0 15px rgb(255, 217, 0),
+        2px 2px 5px rgba(179, 255, 0, 0.8); /* shadow layer */
 }
+
 
