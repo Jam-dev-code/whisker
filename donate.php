@@ -1,13 +1,13 @@
 <?php
 // Database connection details
-$host = 'localhost';
-$dbname = 'paws_db';
-$username = 'root';
-$password = '';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "paws_db";
 
 // Create a new PDO connection
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Could not connect to the database: " . $e->getMessage());
@@ -16,7 +16,7 @@ try {
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve and sanitize form data
-    $donorName = htmlspecialchars($_POST['donorName']);
+    $donorName = isset($_POST['anonymous']) && $_POST['anonymous'] == 1 ? "Anonymous" : htmlspecialchars($_POST['donorName']);
     $email = htmlspecialchars($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Encrypt password
     $amount = $_POST['amount'];
