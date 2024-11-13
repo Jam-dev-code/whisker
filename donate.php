@@ -44,12 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':anonymous', $anonymous);
     $stmt->bindParam(':message', $message);
     $stmt->bindParam(':subscribe', $subscribe);
+// Prepare and execute SQL statement, then redirect on success
+if ($stmt->execute()) {
+    header("Location: index.html?success=1");  // Redirect with a success flag
+    exit();
+} else {
+    echo "There was an error submitting your donation.";
+}
 
-    // Execute the statement and check if it was successful
-    if ($stmt->execute()) {
-        echo "Thank you for your donation!";
-    } else {
-        echo "There was an error processing your donation.";
-    }
 }
 ?>

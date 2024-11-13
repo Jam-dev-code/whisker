@@ -70,10 +70,23 @@
     </nav>
     <!-- Navbar End -->
 
-
+      <script>
+        function showSuccessMessage() {
+            // Show a success alert
+            alert("Thank you for your donation! Your support means a lot! God Bless");
+    
+            // Hide the form after submission
+            document.querySelector('form').style.display = 'none';
+    
+            return true;  // Continue form submission
+        }
+    </script>
+    
+    
+    
   <div class="container mt-5">
     <h2 class="text-center">Donate to Aid for Paws</h2>
-    <form action="donate.php" method="POST" class="mt-4">
+    <form action="donate.php" method="POST" class="mt-4" onsubmit="return showSuccessMessage()">
       <div class="mb-3">
         <label for="donorName" class="form-label">Full Name</label>
         <input type="text" class="form-control" id="donorName" name="donorName" required>
@@ -93,22 +106,26 @@
       <div class="mb-3">
         <label for="paymentMethod" class="form-label">Payment Method</label>
         <select class="form-select" id="paymentMethod" name="paymentMethod" required>
-          <option value="gcash">GCash</option>
-          <option value="paypal">PayPal</option>
-          <option value="paymaya">PayMaya</option>
-          <option value="coins.php">Coins.ph</option>
-          <option value="grabpay">GrabPay</option>
+            <option value="" disabled selected>-- select your e-wallet --</option>
+            <option value="gcash">GCash</option>
+            <option value="paypal">PayPal</option>
+            <option value="paymaya">PayMaya</option>
+            <option value="coins.php">Coins.ph</option>
+            <option value="grabpay">GrabPay</option>
         </select>
-      </div>
-      <div class="mb-3">
+    </div>
+    
+    <div class="mb-3">
         <label for="donationPurpose" class="form-label">Donation Purpose</label>
         <select class="form-select" id="donationPurpose" name="donationPurpose">
-          <option value="animal_shelter">Animal Shelter</option>
-          <option value="medical_funds">Medical Funds</option>
-          <option value="food_supplies">Food Supplies</option>
-          <option value="general">General Support</option>
+            <option value="" disabled selected>-- select your purpose --</option>
+            <option value="animal_shelter">Animal Shelter</option>
+            <option value="medical_funds">Medical Funds</option>
+            <option value="food_supplies">Food Supplies</option>
+            <option value="general">General Support</option>
         </select>
-      </div>
+    </div>
+    
       <div class="form-check mb-3">
         <input class="form-check-input" type="checkbox" id="anonymous" name="anonymous" value="1" onclick="toggleAnonymous()">
         <label class="form-check-label" for="anonymous">Donate Anonymously</label>
@@ -125,21 +142,26 @@
     </form>
   </div>
 
-  <script>
-    // Toggle name visibility for anonymous donations
-    function toggleAnonymous() {
-      const donorName = document.getElementById("donorName");
-      const anonymousCheckbox = document.getElementById("anonymous");
-      
-      if (anonymousCheckbox.checked) {
-        donorName.value = "Anonymous";
-        donorName.setAttribute("readonly", "readonly");
-      } else {
-        donorName.value = "";
-        donorName.removeAttribute("readonly");
-      }
-    }
-  </script>
+    <script>
+        // Toggle name and email visibility for anonymous donations
+        function toggleAnonymous() {
+            const donorName = document.getElementById("donorName");
+            const email = document.getElementById("email");
+            const anonymousCheckbox = document.getElementById("anonymous");
+            
+            if (anonymousCheckbox.checked) {
+                donorName.value = "Anonymous";
+                donorName.setAttribute("readonly", "readonly");
+                email.value = "anonymous@example.com";
+                email.setAttribute("readonly", "readonly");
+            } else {
+                donorName.value = "";
+                donorName.removeAttribute("readonly");
+                email.value = "";
+                email.removeAttribute("readonly");
+            }
+        }
+    </script>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-light mt-5 py-5">
